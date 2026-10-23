@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import PostCard from '../components/PostCard.astro';
+import home from '../data/home.json';
+import { allPages, allPosts } from '../lib/site';
+
+const page = (await allPages()).find(p => p.path === '/');
+const latest = (await allPosts()).slice(0, 3);
+---
+<Base title="Home" description={page?.description} path="/">
+  <section class="hero" aria-label="What we do">
+    {home.tiles.map(t => (
+      <a href={t.href} style={`--bg:url('${t.background}')`}>
+        <img src={t.icon} alt="" width="72" height="72" />
+        <h2>{t.title}</h2>
+      </a>
+    ))}
+  </section>
+
+  <section class="intro wrap">
+    {home.intro.map(p => <p>{p}</p>)}
+  </section>
+
+  <section class="approach wrap">
+    <h2>{home.approachTitle}</h2>
+    <div class="approach-grid">
+      {home.approach.map(a => (
+        <div>
+          <img src={a.image} alt="" width="150" height="150" loading="lazy" />
+          <h3>{a.title}</h3>
+          <p>{a.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="news-band">
+    <div class="wrap">
+      <h2>News &amp; Resources</h2>
+      <div class="post-cards">
+        {latest.map(post => <PostCard post={post} />)}
+      </div>
+      <p class="center" style="margin-top:32px"><a class="btn" href="/news/">All news</a></p>
+    </div>
+  </section>
+
+  <section class="cta" style={home.ctaBackground ? `--bg:url('${home.ctaBackground}')` : undefined}>
+    <div class="wrap">
+      <h2>Tell us your vision, we’ll make it reality</h2>
+      <a class="btn" href="/contact-us/#contact-form">Request Information</a>
+    </div>
+  </section>
+</Base>

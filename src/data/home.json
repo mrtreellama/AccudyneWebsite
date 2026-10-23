@@ -1,0 +1,62 @@
+{
+  "tiles": [
+    {
+      "title": "Composites Automation",
+      "href": "/composites-automation/",
+      "icon": "/uploads/2016/02/composites-automation-2-60x60.png",
+      "background": "/uploads/2016/02/banner-01.jpg",
+      "text": ""
+    },
+    {
+      "title": "Supercritical Fluid Processing",
+      "href": "/supercritical-fluid-processing/",
+      "icon": "/uploads/2016/02/super-critical-fluid-processing-60x60.png",
+      "background": "/uploads/2016/02/banner-02.jpg",
+      "text": ""
+    },
+    {
+      "title": "Industrial Automation",
+      "href": "/industrial-automation/",
+      "icon": "/uploads/2016/02/industrial-automation-60x60.png",
+      "background": "/uploads/2016/02/banner-03.jpg",
+      "text": ""
+    }
+  ],
+  "intro": [
+    "Accudyne has been building first-of- a-kind automation solutions for novel manufacturing processes since 1996. Clients come to Accudyne to tap into our broad expertise across several industrial manufacturing processes and automation equipment technologies. Accudyne and its associates hold multiple patents addressing novel manufacturing solutions for processing Composite Materials and Supercritical Fluid Separation Processes. Accudyne prides itself on providing novel solutions for its client base and serves as a trusted advisor to clients all over the world. While we manufacture equipment for many different applications, there are no model numbers on any of our machines. We specialize in unique equipment with highly specialized capabilities that cannot be sourced from a typical industrial equipment manufacturer. Drawing on our breadth and depth of experience, we consult with clients from the very beginning of their project to accomplish research and development on new processes or to simply advance their existing processes. Once process parameters have been established, Accudyne works to develop equipment concepts which are further refined into detailed machine designs for manufacture. Tell us your vision, we’ll make it reality !"
+  ],
+  "approachTitle": "Our Approach",
+  "approach": [
+    {
+      "title": "Concept Development",
+      "image": "/uploads/2016/02/1-Concept-Dev-150x150.jpg",
+      "text": "Conducting research, brainstorming, and concept development are the first critical steps of transforming your vision into reality."
+    },
+    {
+      "title": "Preliminary Design",
+      "image": "/uploads/2016/02/2-Design-150x150.jpg",
+      "text": "‘The Devil is in the details’ rings very true in the equipment design business, so we dig into the details – right away."
+    },
+    {
+      "title": "Fabrication",
+      "image": "/uploads/2016/02/3-Fab-150x150.jpg",
+      "text": "Following hot on the heels of the design effort, our staff works swiftly to procure and fabricate the necessary components to build the equipment."
+    },
+    {
+      "title": "Systems Integration",
+      "image": "/uploads/2016/02/4-Sys-Int-150x150.jpg",
+      "text": "Once the necessary core components are in-house, assembly begins in an efficient and orderly fashion."
+    },
+    {
+      "title": "Start-Up",
+      "image": "/uploads/2016/02/5-Start-Up-150x150.jpg",
+      "text": "After completion of the assembly tasks, the major electrical, pneumatic, hydraulic, and control systems are inspected prior to ‘Turning the Key’ and testing the equipment."
+    },
+    {
+      "title": "Installation and Support",
+      "image": "/uploads/2016/02/Install-1-150x150.jpg",
+      "text": "Delivery coordination, re-assembly, final testing, training, and post-delivery support provide a turn-key solution for our customers."
+    }
+  ],
+  "ctaBackground": "/uploads/2016/02/line-drawing.png"
+}

@@ -1,0 +1,15 @@
+{
+  "title": "Contact Us",
+  "path": "/contact-us/",
+  "wpId": 273,
+  "parent": 0,
+  "order": 0,
+  "date": "2016-02-10T12:31:26",
+  "modified": "2024-01-30T20:11:39",
+  "description": "Accudyne Systems, Inc. Address: 210 Executive Drive, Suite 5, Newark, DE 19702 Email: info@accudyne.com Phone: (302) 369-5390 Clients Located in the UK or EU: Address: Accudyne Europe LTD, Units 3b & 3c Prospect Park, Prospect Road, Cowes, Isle of Wight, PO31 7AD, UK Email: info@accudyne.co.",
+  "image": null,
+  "excerpt": "Accudyne Systems, Inc. Address: 210 Executive Drive, Suite 5, Newark, DE 19702 Email: info@accudyne.com Phone: (302) 369-5390 Clients Located in the UK or EU: Address: Accudyne Europe LTD, Units 3b & 3c Prospect Park, Prospect Road, Cowes, Isle of Wight, PO31 7AD, UK Email: info@accudyne.co.uk Phone: +44 (0) 7792 013648",
+  "categories": [],
+  "hasForm": false,
+  "html": "<div class=\"row\">\n<div class=\"col col-6\">\n<h2><strong>Accudyne Systems, Inc.</strong></h2>\n<h3>Address:</h3>\n<p>210 Executive Drive, Suite 5, Newark, DE 19702</p>\n<h3>Email:</h3>\n<p><a href=\"mailto:info@accudyne.com\">info@accudyne.com</a></p>\n<h3>Phone:</h3>\n<p>(302) 369-5390</p>\n</div>\n<div class=\"col col-6\">\n<h2><strong>Clients Located in the UK or EU:</strong></h2>\n<h3>Address:</h3>\n<p>Accudyne Europe LTD, Units 3b &amp; 3c Prospect Park, Prospect Road, Cowes, Isle of Wight, PO31 7AD, UK</p>\n<h3>Email:</h3>\n<p><a href=\"mailto:info@accudyne.co.uk\">info@accudyne.co.uk</a></p>\n<h3>Phone:</h3>\n<p>+44 (0) 7792 013648</p>\n</div>\n</div>\n<div class=\"map\"><iframe src=\"https://maps.google.com/maps?q=210%20Executive%20Drive%2C%20Suite%205%2C%20Newark%2C%20DE%2019702&amp;output=embed\" title=\"Map\" loading=\"lazy\" width=\"100%\" height=\"450\"></iframe></div>"
+}

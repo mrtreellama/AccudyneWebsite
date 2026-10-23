@@ -1,0 +1,15 @@
+{
+  "title": "AFP II",
+  "path": "/composites-automation/automated-fiber-placement-afp/afp-ii/",
+  "wpId": 718,
+  "parent": 704,
+  "order": 0,
+  "date": "2016-07-12T14:11:02",
+  "modified": "2016-08-15T15:38:29",
+  "description": "",
+  "image": "/uploads/2016/07/CA-AFPII-a.jpg",
+  "excerpt": "[vc_row][vc_column width=”2/3″][/vc_column][vc_column width=”1/3″][/vc_column][/vc_row][vc_row css=”.vc_custom_1470776493280{margin-top: 2rem !important;}”][vc_column][/vc_column][/vc_row]",
+  "categories": [],
+  "hasForm": false,
+  "html": "<div class=\"row\"><div class=\"col col-8\"><h2>AFP II</h2><figure><img src=\"/uploads/2016/07/CA-AFPII-a.jpg\" alt=\"\" loading=\"lazy\"></figure><div class=\"center\">\n\t\t\t<ul>\n<li>Cut and add on-the- fly</li>\n<li>Twelve ¼” (6.4 mm) wide ends under individual servo control</li>\n<li>19 coordinated axes</li>\n<li>2 DOF in head/ 4 DOF in part</li>\n<li>Linear motors for rapid accel/decel and placement accuracy</li>\n<li>Highly contoured convex and concave parts</li>\n<li>Placement rates up to 800 in/min (20 m/min) depending on contour</li>\n</ul>\n</div></div><div class=\"col col-4\">\n\t\t\t<nav class=\"side-nav\"><h3 class=\"widget-title\">Automated Fiber Placement</h3><ul><li><a href=\"/composites-automation/automated-fiber-placement-afp/afp-i/\">AFP I</a></li><li class=\"current\"><a href=\"/composites-automation/automated-fiber-placement-afp/afp-ii/\">AFP II</a></li><li><a href=\"/composites-automation/automated-fiber-placement-afp/afp-iii/\">AFP III</a></li></ul></nav>\n</div></div><h3>Machine Images</h3><div class=\"gallery\"><a href=\"/uploads/2016/07/CA-AFPII-a-1024x992.jpg\"><img src=\"/uploads/2016/07/CA-AFPII-a-300x291.jpg\" alt=\"\" width=\"300\" height=\"291\" loading=\"lazy\"></a></div>"
+}

@@ -1,0 +1,65 @@
+---
+import '@fontsource-variable/roboto-slab';
+import '@fontsource-variable/montserrat';
+import '../styles/site.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../lib/site';
+import nav from '../data/nav.json';
+
+interface Props {
+  title: string;
+  description?: string;
+  path: string;
+  crumbs?: { title: string; href: string }[];
+}
+const { title, description, path, crumbs } = Astro.props;
+const fullTitle = path === '/' ? SITE.name : `${title} – ${SITE.name}`;
+// Set PUBLIC_NOINDEX=true when hosting a preview copy so search engines skip it.
+const noindex = import.meta.env.PUBLIC_NOINDEX === 'true';
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    {description && <meta name="description" content={description} />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
+    <link rel="canonical" href={new URL(path, Astro.site)} />
+    {nav.favicon && <link rel="icon" href={nav.favicon} />}
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <Header current={path} />
+    {crumbs && (
+      <div class="crumbs">
+        <nav class="wrap" aria-label="Breadcrumb">
+          {crumbs.map((c, i) =>
+            i < crumbs.length - 1
+              ? <Fragment><a href={c.href}>{c.title}</a><span aria-hidden="true">/</span></Fragment>
+              : <span aria-current="page">{c.title}</span>)}
+        </nav>
+      </div>
+    )}
+    <main id="main" data-pagefind-body>
+      <slot />
+    </main>
+    <Footer />
+    <dialog class="lightbox"><img alt="" /><button type="button" aria-label="Close">×</button></dialog>
+    <script>
+      // Gallery thumbnails open the full-size image in a lightbox.
+      const box = document.querySelector<HTMLDialogElement>('.lightbox')!;
+      const img = box.querySelector('img')!;
+      document.querySelectorAll<HTMLAnchorElement>('.gallery a').forEach(a => {
+        a.addEventListener('click', e => {
+          e.preventDefault();
+          img.src = a.href;
+          img.alt = a.querySelector('img')?.alt ?? '';
+          box.showModal();
+        });
+      });
+      box.addEventListener('click', () => box.close());
+    </script>
+  </body>
+</html>

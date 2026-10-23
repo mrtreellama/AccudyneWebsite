@@ -1,0 +1,15 @@
+{
+  "title": "Our Facility",
+  "path": "/about/our-facility/",
+  "wpId": 845,
+  "parent": 187,
+  "order": 0,
+  "date": "2016-07-12T17:06:28",
+  "modified": "2020-02-04T12:59:39",
+  "description": "",
+  "image": "/uploads/2016/07/20160715_115731-1-optimized.jpg",
+  "excerpt": "[vc_row][vc_column width=”2/3″][/vc_column][vc_column width=”1/3″][/vc_column][/vc_row]",
+  "categories": [],
+  "hasForm": false,
+  "html": "<div class=\"row\"><div class=\"col col-8\"><div class=\"center\"><h2>Our Facility</h2><figure><img src=\"/uploads/2016/07/20160715_115731-1-optimized.jpg\" alt=\"\" loading=\"lazy\"></figure><div class=\"center\">\n\t\t\t<p>Accudyne’s Newark, Delaware operations headquarters is a 30,000 square foot facility that houses engineering and design centers, a mechanical fabrication shop and an electrical design and development shop. Our open-plan engineering department and CAD design center allow for brainstorming and free interaction among engineers and designers. Our State-of- the-art engineering and manufacturing center also houses: 1) an electrical shop, where engineers and technicians wire components and build electrical panels and cabinets, 2) a machine shop where machinists make custom parts, and 3) a large flexible assembly space used for final equipment assembly and testing.</p>\n<p>All machine and manufacturing process technology development is conducted in-house in our Newark, DE (USA) center of operations. All machines are conceived, designed, assembled, and started-up in our facilities. This includes alignment, calibration, Quality Assurance (QA), and Factory Acceptance Testing (FAT) to ensure appropriate equipment performance prior to delivery. Once the equipment and process is tested at our facility, Accudyne arranges for transportation of the machine, installs it, integrates it with the existing equipment at the client site, and re-tests the machine to ensure proper performance with the rest of the customer’s process.</p>\n<p>Using 3D solid modeling and Product Lifecycle Management (PLM) software for mechanical design and schematic design software for electrical design, Accudyne’s in-house engineering and design center ensures confidentiality, maintains control of schedule and costs, and most importantly, fosters interaction between designers, engineers, and technicians. The in-house mechanical and electrical design, engineering, and fabrication shops allow Accudyne to maintain quality and schedule even when making Engineering Change Request modifications during final assembly.</p>\n</div></div></div><div class=\"col col-4\">\n\t\t\t<nav class=\"side-nav\"><h3 class=\"widget-title\">About Us</h3><ul><li><a href=\"/about/our-team/\">Our Team</a></li><li class=\"current\"><a href=\"/about/our-facility/\">Our Facility</a></li><li><a href=\"/about/our-mission/\">Our Mission</a></li><li><a href=\"/about/quality-policy/\">Quality Policy</a></li></ul></nav>\n</div></div>"
+}

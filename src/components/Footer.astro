@@ -1,0 +1,48 @@
+---
+import nav from '../data/nav.json';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer">
+  <div class="wrap footer-cols">
+    <section>
+      <h2>Contact Us</h2>
+      <address>
+        <strong>Accudyne Systems, Inc.</strong><br />
+        210 Executive Drive, Suite 5<br />
+        Newark, DE 19702
+      </address>
+      <p><strong>Phone</strong> <a href="tel:13023695390">(302) 369-5390</a><br />
+        <strong>Fax</strong> (302) 368-8498<br />
+        Monday – Friday 8am–5pm EST</p>
+      <p class="footer-eu"><strong>Serving our clients in the EU and beyond:</strong></p>
+      <address>
+        <strong>Accudyne Europe LTD</strong><br />
+        Units 3b &amp; 3c Prospect Park, Prospect Road<br />
+        Cowes, Isle of Wight PO31 7AD, UK
+      </address>
+      <p><strong>Phone</strong> <a href="tel:+447792013648">+44 (0) 7792 013648</a><br />
+        Monday – Friday 8am–5pm GMT</p>
+    </section>
+    <section>
+      <h2>Follow Us</h2>
+      <p><a href={nav.linkedin} class="social" rel="noopener">LinkedIn</a></p>
+      {nav.badges.filter(b => b.href).map(b => (
+        <a href={b.href!} rel="noopener"><img src={b.src} alt={b.alt} width="180" height="55" loading="lazy" /></a>
+      ))}
+    </section>
+    <section>
+      <h2>Certifications</h2>
+      <div class="badges">
+        {nav.badges.filter(b => !b.href).map(b => (
+          <img src={b.src} alt={b.src.includes('DEKRA') ? 'DEKRA certified' : 'UL 508A listed'} loading="lazy" />
+        ))}
+      </div>
+    </section>
+  </div>
+  <div class="copyright">
+    <div class="wrap">
+      <span>© Accudyne Systems, Inc {year}. All Rights Reserved</span>
+      <nav aria-label="Legal">{nav.footerLinks.map(l => <a href={l.href}>{l.title}</a>)}</nav>
+    </div>
+  </div>
+</footer>

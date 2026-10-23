@@ -1,0 +1,16 @@
+---
+import { formatDate } from '../lib/site';
+const { post } = Astro.props;
+---
+<article class="post-card">
+  {post.image && (
+    <a class="thumb" href={post.path} tabindex="-1" aria-hidden="true">
+      <img src={post.image} alt="" loading="lazy" />
+    </a>
+  )}
+  <div class="body">
+    <p class="post-meta">{formatDate(post.date)}</p>
+    <h3><a href={post.path}>{post.title}</a></h3>
+    {post.excerpt && <p>{post.excerpt.length > 180 ? post.excerpt.slice(0, 177).trimEnd() + '…' : post.excerpt}</p>}
+  </div>
+</article>

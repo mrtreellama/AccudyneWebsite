@@ -1,0 +1,489 @@
+{
+  "main": [
+    {
+      "title": "Composites Automation",
+      "href": null,
+      "children": [
+        {
+          "title": "Composites Automation Overview",
+          "href": "/composites-automation/",
+          "children": []
+        },
+        {
+          "title": "Automation-Assisted Work Cells",
+          "href": "/automation-assisted-work-cells/",
+          "children": []
+        },
+        {
+          "title": "Automated Fiber Placement (AFP)",
+          "href": null,
+          "children": [
+            {
+              "title": "Automated Fiber Placement (AFP) Overview",
+              "href": "/composites-automation/automated-fiber-placement-afp/",
+              "children": []
+            },
+            {
+              "title": "AFP I",
+              "href": "/composites-automation/automated-fiber-placement-afp/afp-i/",
+              "children": []
+            },
+            {
+              "title": "AFP II",
+              "href": "/composites-automation/automated-fiber-placement-afp/afp-ii/",
+              "children": []
+            },
+            {
+              "title": "AFP III",
+              "href": "/composites-automation/automated-fiber-placement-afp/afp-iii/",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Automated Tape Laying",
+          "href": null,
+          "children": [
+            {
+              "title": "Automated Tape Laying Overview",
+              "href": "/composites-automation/automated-tape-laying/",
+              "children": []
+            },
+            {
+              "title": "Automated Tape Laminator",
+              "href": "/composites-automation/automated-tape-laying/automated-tape-laminator/",
+              "children": []
+            },
+            {
+              "title": "Ply-by-Ply Tape Laminator",
+              "href": "/composites-automation/automated-tape-laying/ply-by-ply-tape-laminator/",
+              "children": []
+            },
+            {
+              "title": "Thermoplastic Staker / Laminator",
+              "href": "/composites-automation/automated-tape-laying/tp-staker-laminator/",
+              "children": []
+            },
+            {
+              "title": "Electron Beam Tape Laminator",
+              "href": "/composites-automation/automated-tape-laying/electron-beam-tape-laminator/",
+              "children": []
+            },
+            {
+              "title": "Insitu Thermoplastic Laminator I",
+              "href": "/composites-automation/automated-tape-laying/insitu-thermoplastic-laminator-i/",
+              "children": []
+            },
+            {
+              "title": "Insitu Thermoplastic Laminator II",
+              "href": "/composites-automation/automated-tape-laying/insitu-thermoplastic-laminator-ii/",
+              "children": []
+            },
+            {
+              "title": "Lab-Scale ATL Machine",
+              "href": "/composites-automation/automated-tape-laying/lab-scale-atl-machine/",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Forming / Compaction / Debulking",
+          "href": null,
+          "children": [
+            {
+              "title": "Forming / Compaction / Debulking Overview",
+              "href": "/composites-automation/forming-compaction-debulking/",
+              "children": []
+            },
+            {
+              "title": "Stringer Former and Trim Cell",
+              "href": "/composites-automation/forming-compaction-debulking/stringer-forming-and-trim-cell/",
+              "children": []
+            },
+            {
+              "title": "Stringer Former I",
+              "href": "/composites-automation/forming-compaction-debulking/stringer-former-i/",
+              "children": []
+            },
+            {
+              "title": "Stringer Former II",
+              "href": "/composites-automation/forming-compaction-debulking/stringer-former-ii/",
+              "children": []
+            },
+            {
+              "title": "Stringer Former III",
+              "href": "/composites-automation/forming-compaction-debulking/stringer-former-iii/",
+              "children": []
+            },
+            {
+              "title": "Hot Drape Forming",
+              "href": "/composites-automation/forming-compaction-debulking/hot-drape-forming/",
+              "children": []
+            },
+            {
+              "title": "Forming on Contoured Surfaces",
+              "href": "/composites-automation/forming-compaction-debulking/forming-on-contoured-surfaces/",
+              "children": []
+            },
+            {
+              "title": "Automated Debulking Machine",
+              "href": "/composites-automation/forming-compaction-debulking/automated-debulking-machine/",
+              "children": []
+            },
+            {
+              "title": "IR Thermoplastic Panel Preheater",
+              "href": "/composites-automation/forming-compaction-debulking/ir-thermoplastic-panel-preheater/",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Composite Pick and Place",
+          "href": null,
+          "children": [
+            {
+              "title": "Composite Pick and Place Overview",
+              "href": "/composites-automation/composite-pick-and-place/",
+              "children": []
+            },
+            {
+              "title": "Laminating Complex Curvatures",
+              "href": "/composites-automation/composite-pick-and-place/laminating-complex-curvatures/",
+              "children": []
+            },
+            {
+              "title": "Thermoplastic Panel Former",
+              "href": "/composites-automation/composite-pick-and-place/thermoplastic-panel-former/",
+              "children": []
+            },
+            {
+              "title": "Helmet Preform Machine",
+              "href": "/composites-automation/composite-pick-and-place/helmet-preform-machine/",
+              "children": []
+            },
+            {
+              "title": "Small Parts Laminator I",
+              "href": "/composites-automation/composite-pick-and-place/small-parts-laminator-i/",
+              "children": []
+            },
+            {
+              "title": "Small Parts Laminator II",
+              "href": "/composites-automation/composite-pick-and-place/small-parts-laminator-ii/",
+              "children": []
+            },
+            {
+              "title": "Small Parts Laminator III",
+              "href": "/composites-automation/composite-pick-and-place/small-parts-laminator/",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Cross Ply & Fabric Lamination",
+          "href": null,
+          "children": [
+            {
+              "title": "Cross Ply & Fabric Lamination Overview",
+              "href": "/composites-automation/cross-ply-fabric-lamination/",
+              "children": []
+            },
+            {
+              "title": "Variable-Angle, 2-Ply Laminator",
+              "href": "/composites-automation/cross-ply-fabric-lamination/variable-angle-2-ply-laminator/",
+              "children": []
+            },
+            {
+              "title": "Flat Panel Fabric Laminator",
+              "href": "/composites-automation/cross-ply-fabric-lamination/flat-panel-fabric-laminator/",
+              "children": []
+            },
+            {
+              "title": "Variable Angle Ply Laminator I",
+              "href": "/composites-automation/cross-ply-fabric-lamination/variable-angle-ply-laminator-i/",
+              "children": []
+            },
+            {
+              "title": "Variable Angle Ply Laminator II",
+              "href": "/composites-automation/cross-ply-fabric-lamination/variable-angle-ply-laminator-ii/",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Specialty Machines",
+          "href": null,
+          "children": [
+            {
+              "title": "Specialty Machines Overview",
+              "href": "/composites-automation/specialty-machines/",
+              "children": []
+            },
+            {
+              "title": "Tool Wrapper and Sealer",
+              "href": "/composites-automation/specialty-machines/tool-wrapper-and-sealer/",
+              "children": []
+            },
+            {
+              "title": "Off-Axis Laminator",
+              "href": "/composites-automation/specialty-machines/off-axis-laminator/",
+              "children": []
+            },
+            {
+              "title": "Motion Platform / Relay Machine",
+              "href": "/composites-automation/specialty-machines/motion-platform-relay-machine/",
+              "children": []
+            },
+            {
+              "title": "NDT IR Camera Motion Platform",
+              "href": "/composites-automation/specialty-machines/ndt-ir-camera-motion-platform/",
+              "children": []
+            },
+            {
+              "title": "Foam Cutting Machine",
+              "href": "/composites-automation/specialty-machines/foam-cutting-machine/",
+              "children": []
+            },
+            {
+              "title": "Noodle Former / Radius Filler",
+              "href": "/composites-automation/specialty-machines/noodle-former-radius-filler/",
+              "children": []
+            },
+            {
+              "title": "Ply Kitting Machine",
+              "href": "/composites-automation/specialty-machines/ply-kitting-machine/",
+              "children": []
+            },
+            {
+              "title": "Tape Splicer",
+              "href": "/composites-automation/specialty-machines/tape-splicer/",
+              "children": []
+            },
+            {
+              "title": "Thermoplastic Filament Winding",
+              "href": "/composites-automation/specialty-machines/thermoplastic-filament-winding/",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Supercritical Fluid Processing",
+      "href": null,
+      "children": [
+        {
+          "title": "Supercritical Fluid Processing Overview",
+          "href": "/supercritical-fluid-processing/",
+          "children": []
+        },
+        {
+          "title": "Supercritical CO2 Equipment",
+          "href": null,
+          "children": [
+            {
+              "title": "Supercritical CO2 Equipment Overview",
+              "href": "/supercritical-fluid-processing/supercritical-co2-equipment/",
+              "children": []
+            },
+            {
+              "title": "Benchtop Equipment",
+              "href": "/supercritical-fluid-processing/supercritical-co2-equipment/benchtop-equipment/",
+              "children": []
+            },
+            {
+              "title": "Lab/Pilot Scale Equipment",
+              "href": "/supercritical-fluid-processing/supercritical-co2-equipment/labpilot-scale-equipment/",
+              "children": []
+            },
+            {
+              "title": "Production Scale Equipment",
+              "href": "/supercritical-fluid-processing/supercritical-co2-equipment/production-scale-equipment/",
+              "children": []
+            },
+            {
+              "title": "Critical Point Drying",
+              "href": "/supercritical-fluid-processing/supercritical-co2-equipment/critical-point-drying/",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Hydrothermal Processing",
+          "href": null,
+          "children": [
+            {
+              "title": "Hydrothermal Processing Overview",
+              "href": "/supercritical-fluid-processing/hydrothermal-processing/",
+              "children": []
+            },
+            {
+              "title": "Biofuel Reactor",
+              "href": "/supercritical-fluid-processing/hydrothermal-processing/biofuel-reactor/",
+              "children": []
+            },
+            {
+              "title": "Animal Waste to Hydrocarbons",
+              "href": "/supercritical-fluid-processing/hydrothermal-processing/animal-waste-to-hydrocarbons/",
+              "children": []
+            }
+          ]
+        },
+        {
+          "title": "Liquefied Gases",
+          "href": null,
+          "children": [
+            {
+              "title": "Liquefied Gases Overview",
+              "href": "/supercritical-fluid-processing/liquefied-gases/",
+              "children": []
+            },
+            {
+              "title": "Butane Pilot Plant",
+              "href": "/supercritical-fluid-processing/liquefied-gases/butane-pilot-plant/",
+              "children": []
+            },
+            {
+              "title": "DME System for Fiber Recycling",
+              "href": "/supercritical-fluid-processing/liquefied-gases/dme-system-for-fiber-recycling/",
+              "children": []
+            },
+            {
+              "title": "Propane System",
+              "href": "/supercritical-fluid-processing/liquefied-gases/propane-system/",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Industrial Automation",
+      "href": null,
+      "children": [
+        {
+          "title": "Industrial Automation Overview",
+          "href": "/industrial-automation/",
+          "children": []
+        },
+        {
+          "title": "Lithium Winding Machine",
+          "href": "/industrial-automation/lithium-winding-machine/",
+          "children": []
+        },
+        {
+          "title": "Lithium/Copper Laminator",
+          "href": "/industrial-automation/lithiumcopper-laminator/",
+          "children": []
+        },
+        {
+          "title": "Automated End Capper",
+          "href": "/industrial-automation/automated-end-capper/",
+          "children": []
+        },
+        {
+          "title": "Biological Assay",
+          "href": "/industrial-automation/biological-assay/",
+          "children": []
+        },
+        {
+          "title": "Cargo Lifter",
+          "href": "/industrial-automation/cargo-lifter/",
+          "children": []
+        },
+        {
+          "title": "Foam Cutting",
+          "href": "/industrial-automation/foam-cutting/",
+          "children": []
+        },
+        {
+          "title": "Instrumented Fetal Model",
+          "href": "/industrial-automation/instrumented-fetal-model/",
+          "children": []
+        },
+        {
+          "title": "Spray Booth",
+          "href": "/industrial-automation/spray-booth/",
+          "children": []
+        },
+        {
+          "title": "Window Cell Manufacture",
+          "href": "/industrial-automation/window-cell-manufacture/",
+          "children": []
+        },
+        {
+          "title": "Hail Stone Machines",
+          "href": "/industrial-automation/hail-stone-machines/",
+          "children": []
+        }
+      ]
+    },
+    {
+      "title": "News",
+      "href": null,
+      "children": [
+        {
+          "title": "Latest News",
+          "href": "/news/",
+          "children": []
+        },
+        {
+          "title": "Publications",
+          "href": "/publications/",
+          "children": []
+        }
+      ]
+    }
+  ],
+  "top": [
+    {
+      "title": "ABOUT",
+      "href": "/about/"
+    },
+    {
+      "title": "EXPERTISE",
+      "href": "/expertise/"
+    },
+    {
+      "title": "CAREERS",
+      "href": "/careers/"
+    },
+    {
+      "title": "CONTACT",
+      "href": "/contact/"
+    }
+  ],
+  "footerLinks": [
+    {
+      "title": "Home",
+      "href": "/"
+    },
+    {
+      "title": "Terms of Service",
+      "href": "/terms-of-service/"
+    },
+    {
+      "title": "Policies",
+      "href": "/privacy-policy/"
+    }
+  ],
+  "logo": "/uploads/2016/07/logo.png",
+  "favicon": "/uploads/2016/08/cropped-favicon-192x192.png",
+  "badges": [
+    {
+      "src": "/uploads/external/badge_180x55.jpg",
+      "alt": "View Accudyne Systems, Inc. profile on Ariba Discovery",
+      "href": "http://discovery.ariba.com/profile/AN01000606746"
+    },
+    {
+      "src": "/uploads/2020/08/DEKRA-SEAL-tp-217x300.png",
+      "alt": "",
+      "href": null
+    },
+    {
+      "src": "/uploads/2020/08/UL-508A-LOGO-BLUE-300x123.png",
+      "alt": "",
+      "href": null
+    }
+  ],
+  "linkedin": "https://www.linkedin.com/company/accudyne-systems-inc-"
+}

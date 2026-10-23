@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { allPages, allPosts, breadcrumbs, formatDate, splitForm } from '../lib/site';
+
+export async function getStaticPaths() {
+  // Home and the news index have their own templates.
+  const pages = (await allPages()).filter(p => p.path !== '/' && p.path !== '/news/');
+  const posts = await allPosts();
+  return [
+    ...pages.map(entry => ({ params: { slug: entry.path.replace(/^\/|\/$/g, '') }, props: { entry, isPost: false } })),
+    ...posts.map(entry => ({ params: { slug: entry.path.replace(/^\/|\/$/g, '') }, props: { entry, isPost: true } })),
+  ];
+}
+
+const { entry, isPost } = Astro.props;
+const crumbs = await breadcrumbs(entry.path, entry.title);
+const withForm = splitForm(entry.html);
+// The contact page gets the form just before the map.
+const isContact = entry.path === '/contact-us/';
+const contactSplit = isContact && !withForm ? entry.html.split('<div class="map">') : null;
+---
+<Base title={entry.title} description={entry.description || entry.excerpt} path={entry.path} crumbs={crumbs}>
+  <div class="page">
+    <div class="wrap">
+      {isPost ? (
+        <article class="post-article">
+          <p class="post-meta">{formatDate(entry.date)}</p>
+          <h1 class="page-title">{entry.title}</h1>
+          {entry.image && !entry.html.includes(entry.image.replace(/\.\w+$/, '')) && (
+            <img class="featured" src={entry.image} alt="" />
+          )}
+          <Fragment set:html={entry.html} />
+          <p><a href="/news/">← All news</a></p>
+        </article>
+      ) : withForm ? (
+        <>
+          <Fragment set:html={withForm[0]} />
+          <ContactForm />
+          <Fragment set:html={withForm[1]} />
+        </>
+      ) : contactSplit ? (
+        <>
+          <Fragment set:html={contactSplit[0]} />
+          <ContactForm />
+          {contactSplit.length > 1 && <Fragment set:html={'<div class="map">' + contactSplit.slice(1).join('<div class="map">')} />}
+        </>
+      ) : (
+        <Fragment set:html={entry.html} />
+      )}
+    </div>
+  </div>
+</Base>

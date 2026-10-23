@@ -1,0 +1,74 @@
+---
+import nav from '../data/nav.json';
+import { SITE } from '../lib/site';
+
+type Item = { title: string; href: string | null; children: Item[] };
+const { current = '' } = Astro.props;
+
+const isActive = (item: Item): boolean =>
+  (item.href !== null && item.href !== '/' && current.startsWith(item.href)) || item.children.some(isActive);
+---
+<header class="site-header">
+  <div class="top-bar">
+    <div class="wrap">
+      <nav aria-label="Company">
+        {nav.top.map(l => <a href={l.href}>{l.title}</a>)}
+      </nav>
+      <div class="top-contact">
+        <a href={SITE.phoneHref}>{SITE.phone}</a>
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+        <a href="/search/">Search</a>
+      </div>
+    </div>
+  </div>
+  <div class="main-bar wrap">
+    <a href="/" class="logo"><img src={nav.logo} alt={SITE.name} width="190" height="60" /></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav id="main-nav" class="main-nav" aria-label="Main">
+      <ul>
+        {(nav.main as Item[]).map(item => (
+          <li class:list={[{ 'has-sub': item.children.length, active: isActive(item) }]}>
+            {item.href ? <a href={item.href}>{item.title}</a> : <button type="button" aria-expanded="false">{item.title}</button>}
+            {item.children.length > 0 && (
+              <ul>
+                {item.children.map(sub => (
+                  <li class:list={[{ 'has-sub': sub.children.length }]}>
+                    {sub.href ? <a href={sub.href}>{sub.title}</a> : <button type="button" aria-expanded="false">{sub.title}</button>}
+                    {sub.children.length > 0 && (
+                      <ul>
+                        {sub.children.map(leaf => <li><a href={leaf.href}>{leaf.title}</a></li>)}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle')!;
+  const nav = document.getElementById('main-nav')!;
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  // Group headings open their submenu on click (touch and mobile); desktop also opens on hover.
+  nav.querySelectorAll<HTMLButtonElement>('li.has-sub > button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const li = btn.parentElement!;
+      const open = li.classList.toggle('open');
+      btn.setAttribute('aria-expanded', String(open));
+      li.parentElement!.querySelectorAll(':scope > li.open').forEach(o => {
+        if (o !== li) o.classList.remove('open');
+      });
+    });
+  });
+  document.addEventListener('click', e => {
+    if (!nav.contains(e.target as Node)) nav.querySelectorAll('li.open').forEach(li => li.classList.remove('open'));
+  });
+</script>

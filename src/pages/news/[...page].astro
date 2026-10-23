@@ -1,0 +1,32 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Base from '../../layouts/Base.astro';
+import PostCard from '../../components/PostCard.astro';
+import { allPosts } from '../../lib/site';
+
+export const getStaticPaths = (async ({ paginate }) => {
+  return paginate(await allPosts(), { pageSize: 12 });
+}) satisfies GetStaticPaths;
+
+const { page } = Astro.props;
+const crumbs = [{ title: 'Home', href: '/' }, { title: 'News', href: '/news/' }];
+const pages = Array.from({ length: page.lastPage }, (_, i) => i + 1);
+const href = (n: number) => (n === 1 ? '/news/' : `/news/${n}/`);
+---
+<Base title={page.currentPage === 1 ? 'News' : `News – page ${page.currentPage}`} path={href(page.currentPage)} crumbs={crumbs}>
+  <div class="page">
+    <div class="wrap">
+      <h1 class="page-title">Latest News</h1>
+      <div class="post-cards">
+        {page.data.map(post => <PostCard post={post} />)}
+      </div>
+      {page.lastPage > 1 && (
+        <nav class="pager" aria-label="News pages">
+          {pages.map(n => n === page.currentPage
+            ? <span aria-current="page">{n}</span>
+            : <a href={href(n)}>{n}</a>)}
+        </nav>
+      )}
+    </div>
+  </div>
+</Base>

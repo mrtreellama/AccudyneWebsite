@@ -1,0 +1,48 @@
+---
+// Posts to PUBLIC_FORM_ENDPOINT: a Formspree URL, or /contact.php on hosting
+// that runs PHP (see public/contact.php). Without one, the form shows a notice
+// with the email address instead of pretending to send.
+const endpoint = import.meta.env.PUBLIC_FORM_ENDPOINT ?? '';
+---
+<form class="contact-form" id="contact-form" action={endpoint || undefined} method="post" data-endpoint={endpoint}>
+  <h2>Request Information</h2>
+  <div class="form-grid">
+    <div><label for="cf-name">Name *</label><input id="cf-name" name="name" autocomplete="name" required /></div>
+    <div><label for="cf-email">E-mail *</label><input id="cf-email" name="email" type="email" autocomplete="email" required /></div>
+    <div><label for="cf-subject">Subject *</label><input id="cf-subject" name="subject" required /></div>
+  </div>
+  <label for="cf-message">Message *</label>
+  <textarea id="cf-message" name="message" required></textarea>
+  <div class="hp" aria-hidden="true"><label for="cf-website">Leave this empty</label><input id="cf-website" name="website" tabindex="-1" autocomplete="off" /></div>
+  <button class="btn" type="submit">Send Message</button>
+  <p class="form-status" role="status" aria-live="polite"></p>
+</form>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('#contact-form');
+  if (form) {
+    const status = form.querySelector<HTMLElement>('.form-status')!;
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const endpoint = form.dataset.endpoint;
+      status.className = 'form-status';
+      if (!endpoint) {
+        status.classList.add('error');
+        status.textContent = 'The contact form is not connected yet. Please email info@accudyne.com.';
+        return;
+      }
+      const button = form.querySelector('button')!;
+      button.disabled = true;
+      status.textContent = 'Sending…';
+      try {
+        const res = await fetch(endpoint, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+        if (!res.ok) throw new Error(String(res.status));
+        location.href = '/thank-you/';
+      } catch {
+        status.classList.add('error');
+        status.textContent = 'Sorry, your message could not be sent. Please email info@accudyne.com or call (302) 369-5390.';
+        button.disabled = false;
+      }
+    });
+  }
+</script>

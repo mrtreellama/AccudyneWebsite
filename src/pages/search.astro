@@ -1,0 +1,22 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Search" path="/search/" crumbs={[{ title: 'Home', href: '/' }, { title: 'Search', href: '/search/' }]}>
+  <div class="page search-page">
+    <div class="wrap" data-pagefind-ignore="all">
+      <h1 class="page-title">Search</h1>
+      <link href="/pagefind/pagefind-ui.css" rel="stylesheet" />
+      <div id="search"></div>
+      <noscript>Search needs JavaScript enabled.</noscript>
+    </div>
+  </div>
+  <script is:inline src="/pagefind/pagefind-ui.js"></script>
+  <script is:inline>
+    // The index is generated at build time (npm run build); it isn't available under `astro dev`.
+    if (window.PagefindUI) {
+      new PagefindUI({ element: '#search', showSubResults: true, showImages: false, autofocus: true });
+    } else {
+      document.getElementById('search').textContent = 'Search is available after running npm run build and npm run preview.';
+    }
+  </script>
+</Base>
