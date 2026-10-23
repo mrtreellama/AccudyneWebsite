@@ -17,6 +17,7 @@ const PAGES_DIR = 'src/content/pages';
 const POSTS_DIR = 'src/content/posts';
 const DATA_DIR = 'src/data';
 const PUBLIC = 'public';
+const SLIDES_DIR = 'src/assets/slides';
 
 const report = { thin: [], downloads: 0, failedDownloads: [], notes: [] };
 const assets = new Map(); // remote url -> local public path
@@ -454,8 +455,26 @@ async function main() {
     text: $(el).find('h2, h3').first().nextAll().text().replace(/\s+/g, ' ').trim(),
   })).get();
   const lineBg = Object.values(vcBackgrounds($)).map(asset).filter(Boolean);
+
+  // Revolution Slider slides. Their images go to src/assets/slides/ (not public/)
+  // so Astro can resize and convert them at build time.
+  await fs.mkdir(SLIDES_DIR, { recursive: true });
+  const slides = [];
+  for (const el of $('rs-module rs-slide').toArray()) {
+    const img = $(el).find('img.rev-slidebg').first();
+    const src = new URL(img.attr('data-lazyload') || img.attr('src'), ORIGIN).href;
+    const file = path.basename(new URL(src).pathname);
+    await fs.writeFile(path.join(SLIDES_DIR, file), await get(src, { binary: true }));
+    slides.push({
+      image: file,
+      alt: img.attr('alt') || '',
+      href: rewriteHref($(el).attr('data-link')) || null,
+      newTab: $(el).attr('data-target') === '_blank',
+    });
+  }
+
   await fs.writeFile(path.join(DATA_DIR, 'home.json'), JSON.stringify({
-    tiles, intro, approachTitle, approach, ctaBackground: lineBg[0] || null,
+    slides, tiles, intro, approachTitle, approach, ctaBackground: lineBg[0] || null,
   }, null, 2));
 
   await downloadAssets();

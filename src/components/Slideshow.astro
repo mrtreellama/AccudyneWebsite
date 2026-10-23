@@ -1,0 +1,116 @@
+---
+// Home page slideshow, replacing the old Revolution Slider: full-width photos
+// that cross-fade with a slow zoom-out, each linking to a page.
+import type { ImageMetadata } from 'astro';
+import { Image } from 'astro:assets';
+import { allPages } from '../lib/site';
+
+interface Slide { image: string; alt: string; href: string | null; newTab: boolean }
+interface Props { slides: Slide[]; interval?: number }
+const { slides, interval = 9000 } = Astro.props;
+
+const files = import.meta.glob<{ default: ImageMetadata }>('../assets/slides/*', { eager: true });
+const imageFor = (name: string) => {
+  const match = Object.entries(files).find(([p]) => p.endsWith('/' + name));
+  if (!match) throw new Error(`Slide image not found: src/assets/slides/${name}`);
+  return match[1].default;
+};
+
+// Most slides have no alt text in WordPress; describe them by the page they link to.
+const titles = new Map((await allPages()).map(p => [p.path, p.title]));
+const altFor = (s: Slide) => s.alt || (s.href && titles.get(s.href)) || 'Accudyne equipment';
+---
+<section class="slideshow" aria-roledescription="carousel" aria-label="Featured equipment" data-interval={interval}>
+  <div class="slides">
+    {slides.map((s, i) => {
+      const img = (
+        <Image
+          src={imageFor(s.image)}
+          alt={altFor(s)}
+          width={1380}
+          widths={[640, 1024, 1380, 1920]}
+          sizes="100vw"
+          format="webp"
+          quality={78}
+          loading={i === 0 ? 'eager' : 'lazy'}
+          fetchpriority={i === 0 ? 'high' : 'auto'}
+        />
+      );
+      return (
+        <div class:list={['slide', { active: i === 0 }]} role="group" aria-roledescription="slide"
+             aria-label={`${i + 1} of ${slides.length}`} aria-hidden={i === 0 ? undefined : 'true'}>
+          {s.href
+            ? <a href={s.href} target={s.newTab ? '_blank' : undefined} rel={s.newTab ? 'noopener' : undefined} tabindex={i === 0 ? undefined : '-1'}>{img}</a>
+            : img}
+        </div>
+      );
+    })}
+  </div>
+  {slides.length > 1 && (
+    <div class="slideshow-controls">
+      <button type="button" class="prev" aria-label="Previous slide">‹</button>
+      <div class="dots">
+        {slides.map((_, i) => (
+          <button type="button" aria-label={`Show slide ${i + 1}`} aria-current={i === 0 ? 'true' : undefined}></button>
+        ))}
+      </div>
+      <button type="button" class="next" aria-label="Next slide">›</button>
+      <button type="button" class="pause" aria-label="Pause slideshow" aria-pressed="false">❚❚</button>
+    </div>
+  )}
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.slideshow').forEach(root => {
+    const slides = [...root.querySelectorAll<HTMLElement>('.slide')];
+    const dots = [...root.querySelectorAll<HTMLButtonElement>('.dots button')];
+    const pauseBtn = root.querySelector<HTMLButtonElement>('.pause');
+    if (slides.length < 2) return;
+
+    const interval = Number(root.dataset.interval) || 9000;
+    let current = 0;
+    let timer: number | undefined;
+    let paused = false;
+
+    const show = (n: number) => {
+      const next = (n + slides.length) % slides.length;
+      if (next === current) return;
+      const leaving = slides[current];
+      leaving.classList.add('leaving');
+      setTimeout(() => leaving.classList.remove('leaving'), 650);
+      slides[current].classList.remove('active');
+      slides[current].setAttribute('aria-hidden', 'true');
+      slides[current].querySelector('a')?.setAttribute('tabindex', '-1');
+      dots[current]?.removeAttribute('aria-current');
+      current = next;
+      // Make sure a lazily loaded image starts loading before it fades in.
+      slides[current].querySelector('img')?.setAttribute('loading', 'eager');
+      slides[current].classList.add('active');
+      slides[current].removeAttribute('aria-hidden');
+      slides[current].querySelector('a')?.removeAttribute('tabindex');
+      dots[current]?.setAttribute('aria-current', 'true');
+    };
+
+    const start = () => {
+      clearInterval(timer);
+      if (!paused && !document.hidden) timer = window.setInterval(() => show(current + 1), interval);
+    };
+
+    root.querySelector('.prev')?.addEventListener('click', () => { show(current - 1); start(); });
+    root.querySelector('.next')?.addEventListener('click', () => { show(current + 1); start(); });
+    dots.forEach((d, i) => d.addEventListener('click', () => { show(i); start(); }));
+    pauseBtn?.addEventListener('click', () => {
+      paused = !paused;
+      pauseBtn.setAttribute('aria-pressed', String(paused));
+      pauseBtn.setAttribute('aria-label', paused ? 'Play slideshow' : 'Pause slideshow');
+      pauseBtn.textContent = paused ? '►' : '❚❚';
+      root.classList.toggle('paused', paused);
+      start();
+    });
+    document.addEventListener('visibilitychange', start);
+
+    // Preload the second slide once the page has settled so the first fade is clean.
+    window.addEventListener('load', () => slides[1].querySelector('img')?.setAttribute('loading', 'eager'));
+    start();
+  });
+</script>

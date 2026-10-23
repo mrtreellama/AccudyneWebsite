@@ -352,6 +352,92 @@ details > :nth-child(2) { margin-top: 14px; }
 
 /* ---------- Home ---------- */
 
+/* Slideshow: same proportions as the old 1380 × 655 Revolution Slider. */
+.slideshow {
+  position: relative;
+  background: var(--navy-dark);
+  overflow: hidden;
+}
+.slides {
+  position: relative;
+  aspect-ratio: 1380 / 655;
+  max-height: 80vh;
+  width: 100%;
+}
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease, visibility 0s linear 0.6s;
+}
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.6s ease;
+  z-index: 1;
+}
+.slide a, .slide img { display: block; width: 100%; height: 100%; }
+.slide img {
+  object-fit: cover;
+  transform: scale(1.2);
+}
+/* .leaving keeps the outgoing photo's zoom running while it fades out. */
+.slide.active img, .slide.leaving img { animation: slide-zoom 9.6s linear forwards; }
+.slideshow.paused .slide.active img { animation-play-state: paused; }
+@keyframes slide-zoom {
+  from { transform: scale(1.2); }
+  to { transform: scale(1); }
+}
+
+.slideshow-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(0, 12, 85, 0.45);
+}
+.slideshow-controls button {
+  border: 0;
+  background: none;
+  color: var(--white);
+  cursor: pointer;
+  font: 600 18px/1 var(--font-ui);
+  padding: 6px 8px;
+}
+.slideshow-controls .pause { font-size: 11px; letter-spacing: -2px; }
+.dots { display: flex; gap: 2px; }
+.dots button { padding: 6px; }
+.dots button::before {
+  content: '';
+  display: block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1.5px solid var(--white);
+}
+.dots button[aria-current]::before { background: var(--white); }
+.slideshow-controls button:focus-visible { outline: 2px solid var(--white); outline-offset: 1px; border-radius: 4px; }
+
+@media (max-width: 600px) {
+  .slideshow-controls { bottom: 6px; gap: 0; padding: 0 4px; }
+  .slideshow-controls .prev, .slideshow-controls .next { display: none; }
+  .dots button { padding: 5px 4px; }
+  .dots button::before { width: 7px; height: 7px; }
+  .slideshow-controls .pause { padding: 5px 6px; font-size: 9px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slide.active img { animation: none; transform: none; }
+  .slide img { transform: none; }
+}
+
 .hero {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

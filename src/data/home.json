@@ -1,4 +1,48 @@
 {
+  "slides": [
+    {
+      "image": "SFTC-large.jpg",
+      "alt": "",
+      "href": "/composites-automation/forming-compaction-debulking/stringer-forming-and-trim-cell/",
+      "newTab": true
+    },
+    {
+      "image": "IMG_1296.jpg",
+      "alt": "Ultrasonic CNC Robotic Trim Cell",
+      "href": "/industrial-automation/",
+      "newTab": false
+    },
+    {
+      "image": "SuperCube1000-ISO-e1644513232796.jpg",
+      "alt": "",
+      "href": "/supercritical-fluid-processing/",
+      "newTab": false
+    },
+    {
+      "image": "10A-P-Main-Image-2.jpg",
+      "alt": "",
+      "href": "/industrial-automation/",
+      "newTab": false
+    },
+    {
+      "image": "Composites-1-Links-to-Composites-Main.jpg",
+      "alt": "",
+      "href": "/composites-automation/composite-pick-and-place/small-parts-laminator/",
+      "newTab": true
+    },
+    {
+      "image": "Supercritical-2-Links-to-SCF-Main.jpg",
+      "alt": "",
+      "href": "/supercritical-fluid-processing/",
+      "newTab": false
+    },
+    {
+      "image": "Composites-2-Links-to-Composites-Main.jpg",
+      "alt": "",
+      "href": "/composites-automation/",
+      "newTab": false
+    }
+  ],
   "tiles": [
     {
       "title": "Composites Automation",
